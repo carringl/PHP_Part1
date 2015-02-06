@@ -2,10 +2,14 @@
 echo "<html>";
 echo "<head>";
     echo "<title>Intro to PHP</title>";
-echo "<head>";
+    echo "<link rel= 'stylesheet' type= 'text/css'";
+    echo "href = 'http://web.engr.oregonstate.edu/~carringl/php_test.css'";
+echo "</head>";
 
 echo "<body>";
-
+    
+    echo "<h1> Multiplication Tables </h1>";
+    echo "<h3> Enter a set of numbers and see a multiplication table appear. </h3> ";
     echo "<form method= 'GET'>";
 	    echo "min-multiplicand <input type= 'number' name ='MIN_MULT'> </br>";
             echo "max-multiplicand <input type= 'number' name ='MAX_MULT'> </br>";

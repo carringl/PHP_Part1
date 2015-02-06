@@ -1,0 +1,20 @@
+form {
+    border: 2px solid black;
+    padding: 3px 3px 3px 3px;
+    background-color: LightGrey;}
+
+tr td {
+    padding: 7px;
+    border: 2px solid black;
+    text-align: right;}
+table {
+    border:5px double white;
+    border-spacing: 5px;
+    border-collapse: collapse;
+    }
+table tr:nth-child(even) {
+    background-color: white;} 
+table tr:nth-child(odd) {
+    background-color: LightGrey;}    
+body {
+    background-color: Grey;} 
