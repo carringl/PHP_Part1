@@ -9,7 +9,8 @@ echo "</head>";
 echo "<body>";
     
     echo "<h1> Multiplication Tables </h1>";
-    echo "<h3> Enter a set of numbers and see a multiplication table appear. </h3> ";
+    echo "<h3> Enter a set of integers  and see a multiplication table appear. </h3> ";
+    echo "<p> All decimal numbers will be automatically calculated into an integer (rounded down) </p>";
     echo "<form method= 'GET'>";
 	    echo "<input type= 'number' name ='MIN_MULT' placeholder = 'min-multiplicand' > </br>";
             echo "<input type= 'number' name ='MAX_MULT' placeholder = 'max-multiplicand'> </br>";
@@ -22,28 +23,45 @@ echo "<body>";
     $num2= $_GET['MAX_MULT'];
     $num3= $_GET['MIN_MULTIPLIER'];
     $num4= $_GET['MAX_MULTIPLIER'];
+    $counter=0 ;
     
-    //if($num1 > $num2){
-        //echo "invalid multiplicand number set";}
-    //elseif($num3 > $num4){
-        //echo "invalid multiplier number set";}
     if(($num1 == null) || ($num2 == null) || ($num3 == null) || ($num4 == null)){
         echo "please enter a valid number set and click submit </br>";}
-    elseif(is_numeric($num1) == false) {
-        echo "Error: min-multiplicand is not a number. </br>";}
-    elseif(is_numeric($num2) == false){
-        echo "Error: max-multiplicand is not a number. </br>";}
-    elseif(is_numeric($num3) == false){
-        echo "Error: min-multiplier is not a number. </br>";}
-    elseif(is_numeric($num4) == false){
-        echo "Error: max-multiplier is not a number. </br>";}
-    elseif($num1 > $num2) {
-        echo "Error: Minimum multiplicand is larger than maximum. </br>";}
-    elseif($num3 > $num4) {
-        echo "Error: Minimum multiplier is larger than maximum. </br>";}      
+    
+    if(is_numeric($num1) == true) {
+        $num1 = intval($num1);}
     else{
-        echo "input accepted";
-   
+        echo "Error: min-multiplicand is not an integer. </br>";}
+    
+    if(is_numeric($num2) == true){
+        $num2 = intval($num2);}
+    else{
+        echo "Error: max-multiplicand is not a integer. </br>";}
+    
+
+    if(is_numeric($num3) == true){
+        $num3 = intval($num3);}
+    else{  
+        echo "Error: min-multiplier is not a integer. </br>";}
+    
+    if(is_numeric($num4) == true){
+        $num4 = intval($num4);}
+    else{
+        echo "Error: max-multiplier is not a integer. </br>";}
+    
+    if($num1 > $num2) {
+        echo "Error: Minimum multiplicand is larger than maximum... switching values. </br>";
+        $tmp = $num1;
+        $num1 = $num2;
+        $num2 = $tmp;}
+
+    if($num3 > $num4) {
+        echo "Error: Minimum multiplier is larger than maximum... switching values. </br>";
+        $tmp = $num3;
+        $num3 = $num4;
+        $num4 = $tmp;}
+      
+       
     $rowArray = array();
         for ($i = $num1; $i < ($num2+1); $i++){
             $rowArray[] = $i;}
@@ -67,7 +85,7 @@ echo "<body>";
         }
         echo "</tr>";
     }
-    echo "</table>";}
+    echo "</table>";
    
     unset($num1);
     unset($num2);
