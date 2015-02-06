@@ -1,5 +1,8 @@
 form {
+<<<<<<< HEAD
     width: 200px;
+=======
+>>>>>>> parent of ba3c594... cleaned up style sheet a bit. Fixed some error checking:
     border: 2px solid black;
     padding: 3px 3px 3px 3px;
     background-color: LightGrey;}
@@ -9,7 +12,7 @@ tr td {
     border: 2px solid black;
     text-align: right;}
 table {
-    border:5px double black;
+    border:5px double white;
     border-spacing: 5px;
     border-collapse: collapse;
     }
