@@ -1,19 +1,20 @@
-<html>
-<head>
-    <title>Intro to PHP</title>
-<head>
+<?php 
+echo "<html>";
+echo "<head>";
+    echo "<title>Intro to PHP</title>";
+echo "<head>";
 
-<body>
+echo "<body>";
 
-    <form method= "GET">
-	    min-multiplicand <input type= "number" name ="MIN_MULT"> </br>
-            max-multiplicand <input type= "number" name ="MAX_MULT"> </br>
-            min-multiplier <input type = "number" name = "MIN_MULTIPLIER"></br>
-	    max-multiplier <input type = "number" name = "MAX_MULTIPLIER"></br>
-            <input type="submit">
-    </form>
+    echo "<form method= 'GET'>";
+	    echo "min-multiplicand <input type= 'number' name ='MIN_MULT'> </br>";
+            echo "max-multiplicand <input type= 'number' name ='MAX_MULT'> </br>";
+            echo "min-multiplier <input type = 'number' name = 'MIN_MULTIPLIER'></br>";
+	    echo "max-multiplier <input type = 'number' name = 'MAX_MULTIPLIER'></br>";
+            echo "<input type='submit'>";
+    echo "</form>";
     
-    <?php $num1= $_GET['MIN_MULT'];
+    $num1= $_GET['MIN_MULT'];
     //echo $num1."\n";
     $num2= $_GET['MAX_MULT'];
     //echo $num2."\n";
@@ -38,10 +39,12 @@
     //echo "$multiplier </br>";
  
     $rowArray = array(null);
+        $rowArray[] = " ";
         for ($i = $num1; $i < ($num2 + 1); $i++){
             $rowArray[] = $i;}
        
     $columnArray = array(null);
+        $columnArray[] = " "; 
         for($i = $num3; $i < ($num4 + 1); $i++) {
             $columnArray[] = $i;}
  
@@ -54,8 +57,25 @@
     //    echo "$value </br>";
     
     //concat the multiplicand and the multipliers together into table strings
-        
-
+    // sets first row
+    echo "<table>";
+    echo "<tr>";
+    foreach($rowArray as $value){
+            echo "<td> $value </td>";}
+    echo "</tr>";
+    // sets all rows after the first
+    /*for($i = 1; $i < $multiplicand; $i++;){
+        echo "<tr>";
+        echo "<td> $columnArray[i] </td>";
+       
+        for($j = 1; $j < $multiplier; $j++){
+            $product = ($rowArray[i] * $columnArray[i]);
+            echo "<td> $product </td>";
+       }
+        echo "</tr>";
+    } 
+    */echo "</table>";
+   
     //put multiplicands on rows
     //put multipliers on tables
     //multiply rows and columns 
