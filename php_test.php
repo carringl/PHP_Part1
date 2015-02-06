@@ -11,10 +11,10 @@ echo "<body>";
     echo "<h1> Multiplication Tables </h1>";
     echo "<h3> Enter a set of numbers and see a multiplication table appear. </h3> ";
     echo "<form method= 'GET'>";
-	    echo "min-multiplicand <input type= 'number' name ='MIN_MULT'> </br>";
-            echo "max-multiplicand <input type= 'number' name ='MAX_MULT'> </br>";
-            echo "min-multiplier <input type = 'number' name = 'MIN_MULTIPLIER'></br>";
-	    echo "max-multiplier <input type = 'number' name = 'MAX_MULTIPLIER'></br>";
+	    echo "<input type= 'number' name ='MIN_MULT' placeholder = 'min-multiplicand' > </br>";
+            echo "<input type= 'number' name ='MAX_MULT' placeholder = 'max-multiplicand'> </br>";
+            echo "<input type = 'number' name = 'MIN_MULTIPLIER' placeholder = 'min-multiplier'></br>";
+	    echo "<input type = 'number' name = 'MAX_MULTIPLIER' placeholder = 'max-multiplier'></br>";
             echo "<input type='submit'>";
     echo "</form>";
     
@@ -23,12 +23,24 @@ echo "<body>";
     $num3= $_GET['MIN_MULTIPLIER'];
     $num4= $_GET['MAX_MULTIPLIER'];
     
-    if($num1 > $num2){
-        echo "invalid multiplicand number set";}
-    elseif($num3 > $num4){
-        echo "invalid multiplier number set";}
-    elseif(($num1 == null) || ($num2 == null) || ($num3 == null) || ($num4 == null)){
-        echo "please enter a valid number set and click submit";} 
+    //if($num1 > $num2){
+        //echo "invalid multiplicand number set";}
+    //elseif($num3 > $num4){
+        //echo "invalid multiplier number set";}
+    if(($num1 == null) || ($num2 == null) || ($num3 == null) || ($num4 == null)){
+        echo "please enter a valid number set and click submit </br>";}
+    elseif(is_numeric($num1) == false) {
+        echo "Error: min-multiplicand is not a number. </br>";}
+    elseif(is_numeric($num2) == false){
+        echo "Error: max-multiplicand is not a number. </br>";}
+    elseif(is_numeric($num3) == false){
+        echo "Error: min-multiplier is not a number. </br>";}
+    elseif(is_numeric($num4) == false){
+        echo "Error: max-multiplier is not a number. </br>";}
+    elseif($num1 > $num2) {
+        echo "Error: Minimum multiplicand is larger than maximum. </br>";}
+    elseif($num3 > $num4) {
+        echo "Error: Minimum multiplier is larger than maximum. </br>";}      
     else{
         echo "input accepted";
    
