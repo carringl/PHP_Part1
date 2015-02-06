@@ -13,14 +13,14 @@
             <input type="submit">
     </form>
     
-    <?php $num1= $_GET['MIN_NUM'];
-    echo $num1."\n";
-    $num2= $_GET['MAX_NUM'];
-    echo $num2."\n";
+    <?php $num1= $_GET['MIN_MULT'];
+    //echo $num1."\n";
+    $num2= $_GET['MAX_MULT'];
+    //echo $num2."\n";
     $num3= $_GET['MIN_MULTIPLIER'];
-    echo $num3."\n";
+    //echo $num3."\n";
     $num4= $_GET['MAX_MULTIPLIER'];
-    echo $num4."\n";
+    //echo $num4."\n";
     if($num1 > $num2){
         echo "invalid multiplicand number set";}
     elseif($num3 > $num4){
@@ -32,10 +32,30 @@
 
     //with the form done now I need to do the following items
     //determine the array of numbers in multiplicand and in multiplier
-    $multiplicand = new array($num2-$num1+1);
-    $multiplier = new array($num4-$num3+1);
+    $multiplicand = ($num2 - $num1 + 1);
+    $multiplier = ($num4 - $num3 + 1);
+    //echo "$multiplicand </br>";
+    //echo "$multiplier </br>";
+ 
+    $rowArray = array(null);
+        for ($i = $num1; $i < ($num2 + 1); $i++){
+            $rowArray[] = $i;}
+       
+    $columnArray = array(null);
+        for($i = $num3; $i < ($num4 + 1); $i++) {
+            $columnArray[] = $i;}
+ 
+    //foreach ($rowArray as $value)
+    //    echo "$value </br>";  
+
+    //echo "</br> </br>";
+
+    //foreach ($columnArray as $value)
+    //    echo "$value </br>";
     
     //concat the multiplicand and the multipliers together into table strings
+        
+
     //put multiplicands on rows
     //put multipliers on tables
     //multiply rows and columns 
@@ -43,6 +63,11 @@
     unset($num1);
     unset($num2);
     unset($num3);
-    unset($num4); ?>		
+    unset($num4);
+    unset($multiplicand);
+    unset($multiplier);
+    unset($rowArray);
+    unset($columnArray); ?>		
+
 </body>
 </html>
