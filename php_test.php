@@ -1,4 +1,5 @@
-<?php 
+<?php
+echo "<!DOCTYPE html>"; 
 echo "<html>";
 echo "<head>";
     echo "<title>Intro to PHP</title>";
@@ -23,16 +24,16 @@ echo "<body>";
     $num2= $_GET['MAX_MULT'];
     $num3= $_GET['MIN_MULTIPLIER'];
     $num4= $_GET['MAX_MULTIPLIER'];
-    $counter=0 ;
-    
+        
     if(($num1 == null) || ($num2 == null) || ($num3 == null) || ($num4 == null)){
         echo "please enter a valid number set and click submit </br>";}
-    
+    else{
+
     if(is_numeric($num1) == true) {
         $num1 = intval($num1);}
     else{
         echo "Error: min-multiplicand is not an integer. </br>";}
-    
+
     if(is_numeric($num2) == true){
         $num2 = intval($num2);}
     else{
@@ -85,7 +86,7 @@ echo "<body>";
         }
         echo "</tr>";
     }
-    echo "</table>";
+    echo "</table>";}
    
     unset($num1);
     unset($num2);
