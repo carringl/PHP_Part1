@@ -28,27 +28,38 @@ echo "<body>";
     if(($num1 == null) || ($num2 == null) || ($num3 == null) || ($num4 == null)){
         echo "please enter a valid number set and click submit </br>";}
     else{
-
-    if(is_numeric($num1) == true) {
-        $num1 = intval($num1);}
+    
+    if(ctype_digit($num1) == false) {
+	echo "Error: min-muliplicand is not an integer. </br>";  	
+        if(is_numeric($num1) == true) {
+            echo "converting to integer... </br>";
+            $num1 = intval($num1);}}
     else{
         echo "Error: min-multiplicand is not an integer. </br>";}
 
-    if(is_numeric($num2) == true){
-        $num2 = intval($num2);}
+    if(ctype_digit($num2) == false) {
+        echo "Error: max-multiplicand is not an integer. </br>";
+        if(is_numeric($num2) == true){
+            echo "converting to integer... </br>"; 
+            $num2 = intval($num2);}}
     else{
-        echo "Error: max-multiplicand is not a integer. </br>";}
+        echo "Error: max-multiplicand is not an integer. </br>";}
     
-
-    if(is_numeric($num3) == true){
-        $num3 = intval($num3);}
+    if(ctype_digit($num3) == false) {
+        echo "Error: min-multiplier is not an integer </br>";
+        if(is_numeric($num3) == true){
+            echo "converting to integer... </br>";
+            $num3 = intval($num3);}}
     else{  
-        echo "Error: min-multiplier is not a integer. </br>";}
-    
-    if(is_numeric($num4) == true){
-        $num4 = intval($num4);}
+        echo "Error: min-multiplier is not an integer. </br>";}
+
+    if(ctype_digit($num4) == false) {
+        echo "Error: max-multiplier is not an integer. </br>";
+        if(is_numeric($num4) == true){
+            echo "converting to integer... </br>";
+            $num4 = intval($num4);}}
     else{
-        echo "Error: max-multiplier is not a integer. </br>";}
+        echo "Error: max-multiplier is not an integer. </br>";}
     
     if($num1 > $num2) {
         echo "Error: Minimum multiplicand is larger than maximum... switching values. </br>";
