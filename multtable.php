@@ -2,7 +2,7 @@
 echo "<!DOCTYPE html>"; 
 echo "<html>";
 echo "<head>";
-    echo "<title>Intro to PHP</title>";
+    echo "<title>Multiplication Table Creator</title>";
     echo "<link rel= 'stylesheet' type= 'text/css'";
     echo "href = 'http://web.engr.oregonstate.edu/~carringl/php_test.css'";
 echo "</head>";
@@ -26,7 +26,15 @@ echo "<body>";
     $num4= $_GET['max-multiplier'];
         
     if(($num1 == null) || ($num2 == null) || ($num3 == null) || ($num4 == null)){
-        echo "please enter a valid number set and click submit </br>";}
+        echo "please enter a valid number set and click submit </br>";
+    	if($num1 == null){
+            echo "please input a value into min-multiplicand </br>";}
+    	if($num2 == null){
+            echo "please input a value into max-multiplicand </br>";}
+    	if($num3 == null){
+            echo "please input a value into min-multiplier </br>";}
+    	if($num4 == null){
+            echo "please input a value into max-multiplier </br>";}}
     else{
     
     if(ctype_digit($num1) == false) {
