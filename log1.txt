@@ -1,0 +1,23 @@
+﻿You log goes in this  file.
+
+Start: 2 February 2015 -1530
+End: 2 February 2015 -2200
+Total time – 6:30
+comments- read project, started reading course material
+
+Start: 3 February 2015 -1530
+End: 3 February 2015 -2200
+Total time – 6:30
+comments- worked on project, php seems cool. Put 20 hr limit on this classes hw this week.
+
+Start: 5 February 2015 -1530
+End: 5 February 2015 -2200
+Total time – 6:30
+comments- worked on project, got most of it complete.
+
+Start: 7 February 2015 -1530
+End: 7 February 2015 -2200
+Total time – 6:30
+comments- completed everything but loop.
+
+Final comments- yes I had plenty more time to work on this project. Yes I could have completed another 100 hours to get this done. But I decided that this is not enough portion of my grade to sit trying to figure this out. This doesn't mean that I wasnt still working on class material. I found 3 very interesting books that I am now about halfway through on php, css3 and javascript (which I am still weak weak weak on).
